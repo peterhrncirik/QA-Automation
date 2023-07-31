@@ -1,0 +1,5 @@
+# Ignore env
+env/
+
+# Normally would ignore .gitignore, but for the project I will include it
+# .gitignore
