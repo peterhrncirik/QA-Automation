@@ -1,5 +1,8 @@
 # Ignore env
 env/
 
+# Ignore gecodriver log
+geckodriver.log
+
 # Normally would ignore .gitignore, but for the project I will include it
 # .gitignore
