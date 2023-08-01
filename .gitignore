@@ -4,6 +4,9 @@ env/
 # Ignore pycache
 __pycache__/
 
+# Ignore pytest cache
+.pytest_cache/
+
 # Ignore gecodriver log
 geckodriver.log
 

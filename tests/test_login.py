@@ -4,6 +4,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.firefox.options import Options
 
+from src.pages.loginpage import LoginPage
+
+import pytest
+
+@pytest.fixture()
 def test_setup():
     global driver, wait
     options = Options()
@@ -14,15 +19,18 @@ def test_setup():
     driver.get('https://www.automationexercise.com/')
     title = driver.title
     assert title == 'Automation Exercise'
+    yield
+    driver.close()
+    driver.quit()
 
-def test_login():
-    driver.find_element(By.LINK_TEXT, 'Signup / Login').click()
-    driver.find_element(By.XPATH, '//input[@data-qa="login-email"]').send_keys('test@email.com')
-    driver.find_element(By.XPATH, '//input[@data-qa="login-password"]').send_keys('123Password')
-    driver.find_element(By.XPATH, '//button[@data-qa="login-button"]').click()
+def test_incorrect_login(test_setup):
+    login_page = LoginPage(driver)
+    login_page.go_to_login_page()
+    login_page.enter_email('test@lalala.com')
+    login_page.enter_password('MyPassword123')
+    login_page.submit()
+    
     error_message = wait.until(EC.visibility_of_element_located((By.XPATH, '//p[@style="color: red;"]')))
     assert 'Your email or password is incorrect!' in error_message.text
 
-def test_teardown():
-    driver.close()
-    driver.quit()
+
