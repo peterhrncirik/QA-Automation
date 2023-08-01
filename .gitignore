@@ -1,6 +1,9 @@
 # Ignore env
 env/
 
+# Ignore pycache
+__pycache__/
+
 # Ignore gecodriver log
 geckodriver.log
 
