@@ -1,11 +1,12 @@
 from selenium.webdriver.common.by import By
-from .commonops import CommonOps
+from .basepage import BasePage
 
-"""
-    Sign Up Page Object Model
-"""
 
-class SignUp_FirstStep(CommonOps):
+class SignUp_FirstStep(BasePage):
+
+    """
+        Pre Sign-Up Page Object Model
+    """
 
     PRE_SIGNUP_PAGE = (By.LINK_TEXT, 'Signup / Login')
     
@@ -30,7 +31,15 @@ class SignUp_FirstStep(CommonOps):
         self.wait_for(self.USERNAME_INPUT).send_keys(username)
             
     def submit(self):
-        self.find(self.SIGNUP_BUTTON).click()
+        self.find_element(self.SIGNUP_BUTTON).click()
 
     def check_successful_redirect(self):
         assert self.SIGNUP_URL in self.driver.current_url
+
+class MainSignUp(BasePage):
+
+    """
+        Main Sign-up Page Object Model
+    """
+
+    pass

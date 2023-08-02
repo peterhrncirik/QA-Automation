@@ -1,4 +1,4 @@
-from src.pages.signup import SignUp_FirstStep
+from src.pages.signup import SignUp_FirstStep, MainSignUp
 
 """
     Test Sign Up Functionality
@@ -6,9 +6,16 @@ from src.pages.signup import SignUp_FirstStep
 
 def test_pre_sign_up(driver):
 
-    login_page = SignUp_FirstStep(driver)
-    login_page.go_to_pre_signup_page()
-    login_page.enter_email('test@lalala.com')
-    login_page.enter_username('MyPassword123')
-    login_page.submit()
-    login_page.check_successful_redirect()
+    TEST_EMAIL = 'test@email1.com'
+    TEST_USERNAME = 'Tester'
+
+    pre_signup_page = SignUp_FirstStep(driver)
+    pre_signup_page.go_to_pre_signup_page()
+    pre_signup_page.enter_email(TEST_EMAIL)
+    pre_signup_page.enter_username(TEST_USERNAME)
+    pre_signup_page.submit()
+    pre_signup_page.check_successful_redirect()
+
+def test_main_sign_up(driver):
+
+    pass
