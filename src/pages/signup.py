@@ -1,13 +1,16 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from .basepage import BasePage
-from src.locators.locators import PreSignUpPageLocators, MainSignUpPageLocators
+from src.locators.locators import PreSignUpPageLocators, MainSignUpPageLocators, AccountCreatedPageLocators
 
 class SignUp_FirstStep(BasePage):
 
     """
         Pre Sign-Up Page Object Model
     """
+
+    def pre_signup_page_heading(self):
+        return self.find_element(PreSignUpPageLocators.PRE_SIGNUP_PAGE_HEADING)
 
     def go_to_pre_signup_page(self):
         self.wait_for(PreSignUpPageLocators.PRE_SIGNUP_PAGE).click()
@@ -32,6 +35,9 @@ class MainSignUp(BasePage):
     """
         Main Sign-up Page Object Model
     """
+
+    def page_heading(self):
+        return self.find_element(MainSignUpPageLocators.PAGE_HEADING)
 
     def select_title(self, title):
 
@@ -105,9 +111,9 @@ class MainSignUp(BasePage):
 
     def select_country(self, country):
 
-        country_dropdown = self.wait_for_element_to_be_clickable(MainSignUpPageLocators.COUNTRY_SELECT)
+        country_dropdown = self.wait_for(MainSignUpPageLocators.COUNTRY_SELECT)
         country_select = Select(country_dropdown)
-        country_select.select_by_value(country)
+        country_select.select_by_visible_text(country)
 
     def enter_state(self, state):
         self.wait_for(MainSignUpPageLocators.STATE_INPUT).clear()
@@ -124,3 +130,26 @@ class MainSignUp(BasePage):
     def enter_mobile_number(self, mobile_number):
         self.wait_for(MainSignUpPageLocators.MOBILE_NUMBER_INPUT).clear()
         self.wait_for(MainSignUpPageLocators.MOBILE_NUMBER_INPUT).send_keys(mobile_number)
+
+    def submit_form(self):
+        self.find_element(MainSignUpPageLocators.CREATE_ACCOUNT_BUTTON).click()
+
+class AccountCreated(BasePage):
+
+    def page_heading(self):
+        return self.find_element(AccountCreatedPageLocators.PAGE_HEADING)
+      
+    def click_on_continue_button(self):
+        self.find_element(AccountCreatedPageLocators.CONTINUE_BUTTON).click()
+
+    def check_user_logged_in(self):
+        return self.wait_for(AccountCreatedPageLocators.LOGGED_IN_AS)
+
+    def logout_button(self):
+        self.wait_for(AccountCreatedPageLocators.LOGOUT_BUTTON)
+
+    def delete_account(self):
+        self.wait_for(AccountCreatedPageLocators.DELETE_ACCOUNT_BUTTON).click()
+
+    def account_deleted_heading(self):
+        return self.wait_for(AccountCreatedPageLocators.ACCOUNT_DELETED_HEADING)

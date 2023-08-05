@@ -20,6 +20,8 @@ class LoginPageLocators:
 class PreSignUpPageLocators:
 
     PRE_SIGNUP_PAGE = (By.LINK_TEXT, 'Signup / Login')
+
+    PRE_SIGNUP_PAGE_HEADING = (By.XPATH, '/html/body/section/div/div/div[3]/div/h2')
     
     LOGIN_PAGE_URL = '/login'
     SIGNUP_URL = '/signup'
@@ -30,6 +32,9 @@ class PreSignUpPageLocators:
     SIGNUP_BUTTON = (By.XPATH, '//button[@data-qa="signup-button"]')
 
 class MainSignUpPageLocators:
+
+    # Using Tag name as it's the first h2 on the page
+    PAGE_HEADING = (By.TAG_NAME, 'h2')
 
     TITLE_CHECKBOX_MR = (By.ID, 'id_gender1')
     TITLE_CHECKBOX_MRS = (By.ID, 'id_gender2')
@@ -58,3 +63,12 @@ class MainSignUpPageLocators:
     MOBILE_NUMBER_INPUT = (By.ID, 'mobile_number')
 
     CREATE_ACCOUNT_BUTTON = (By.XPATH, '//button[@data-qa="create-account"]')
+
+class AccountCreatedPageLocators:
+
+    PAGE_HEADING = (By.TAG_NAME, 'h2')
+    CONTINUE_BUTTON = (By.XPATH, '//a[@data-qa="continue-button"]')
+    LOGGED_IN_AS = (By.PARTIAL_LINK_TEXT, 'Logged in as')
+    LOGOUT_BUTTON = (By.LINK_TEXT, 'Logout')
+    DELETE_ACCOUNT_BUTTON = (By.LINK_TEXT, 'Delete Account')
+    ACCOUNT_DELETED_HEADING = (By.TAG_NAME, 'h2')

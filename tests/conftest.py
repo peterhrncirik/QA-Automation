@@ -7,6 +7,7 @@ def driver():
     options = Options()
     # options.add_argument('-headless')
     driver = webdriver.Firefox(options=options)
+    driver.install_addon('ublock.xpi')
     driver.implicitly_wait(1)
     driver.get('https://www.automationexercise.com/')
 

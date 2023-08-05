@@ -19,9 +19,6 @@ class BasePage:
     def wait_for(self, locator):
         return self._wait.until(EC.presence_of_element_located(locator))
 
-    def wait_for_element_to_be_clickable(self, locator):
-        return self._wait.until(EC.element_to_be_clickable(locator))
-
     def find_element(self, locator):
 
         # return self.driver.find_element(*locator)
@@ -31,7 +28,6 @@ class BasePage:
             return self._wait.until(EC.presence_of_element_located(locator))
         except NoSuchElementException as e:
             print(f'Element with {locator[0]} of {locator[1]} not found', e)
-
 
     def context_click(self, element):
 
