@@ -12,10 +12,6 @@ class SignUp_FirstStep(BasePage):
     def pre_signup_page_heading(self):
         return self.find_element(PreSignUpPageLocators.PRE_SIGNUP_PAGE_HEADING)
 
-    def go_to_pre_signup_page(self):
-        self.wait_for(PreSignUpPageLocators.PRE_SIGNUP_PAGE).click()
-        assert PreSignUpPageLocators.LOGIN_PAGE_URL in self.driver.current_url
-
     def enter_email(self, email):
         self.wait_for(PreSignUpPageLocators.EMAIL_INPUT).clear()
         self.wait_for(PreSignUpPageLocators.EMAIL_INPUT).send_keys(email)

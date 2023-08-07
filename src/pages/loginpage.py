@@ -8,10 +8,6 @@ from src.locators.locators import LoginPageLocators
 
 class LoginPage(BasePage):
 
-    def go_to_login_page(self):
-        self.wait_for(LoginPageLocators.LOGIN_PAGE_LINK).click()
-        assert LoginPageLocators.LOGIN_PAGE_URL in self.driver.current_url
-
     def enter_email(self, email):
         self.wait_for(LoginPageLocators.EMAIL_INPUT).clear()
         self.wait_for(LoginPageLocators.EMAIL_INPUT).send_keys(email)

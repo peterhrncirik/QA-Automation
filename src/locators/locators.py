@@ -3,6 +3,15 @@ from selenium.webdriver.common.by import By
 """
     Classes containing locators for specific pages
 """
+class RedirectLocators:
+
+    HOME = (By.LINK_TEXT, 'Home')
+    PRODUCTS = (By.LINK_TEXT, 'Products')
+    CART = (By.LINK_TEXT, 'Cart')
+    LOGIN_SIGNUP = (By.LINK_TEXT, 'Signup / Login')
+    TEST_CASES = (By.LINK_TEXT, 'Test Cases')
+    API_TESTING = (By.LINK_TEXT, 'API Testing')
+    CONTACT_US = (By.LINK_TEXT, 'Contact us')
 
 class LoginPageLocators:
 

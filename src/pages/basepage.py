@@ -3,6 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import NoSuchElementException
 
+from src.locators.locators import RedirectLocators
 from src import settings
 
 class BasePage:
@@ -42,3 +43,31 @@ class BasePage:
     
     def get_page_title(self):
         return self.driver.title
+    
+    def redirect_to(self, to_page):
+        
+        address = None
+        url = None
+
+        match to_page:
+            case 'home':
+                address = RedirectLocators.HOME
+                url = '/'
+            case 'products':
+                address = RedirectLocators.PRODUCTS
+                url = '/products'
+            case 'cart':
+                address = RedirectLocators.CART
+                url = '/view_cart'
+            case 'signup':
+                address = RedirectLocators.LOGIN_SIGNUP
+                url = '/login'
+            case 'login':
+                address = RedirectLocators.LOGIN_SIGNUP
+                url = '/login'
+            case 'contact_us':
+                address = RedirectLocators.CONTACT_US
+                url = '/contact_us'
+
+        self.wait_for(address).click()
+        assert url in self.driver.current_url

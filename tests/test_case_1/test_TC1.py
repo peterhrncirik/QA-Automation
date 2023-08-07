@@ -43,7 +43,7 @@ def test_register_new_user(driver):
 
     # Do a pre-sign up
     pre_signup_page = SignUp_FirstStep(driver)
-    pre_signup_page.go_to_pre_signup_page()
+    pre_signup_page.redirect_to('signup')
 
     # Verify New User Signup! is visible
     pre_signup_page_heading = pre_signup_page.pre_signup_page_heading()
