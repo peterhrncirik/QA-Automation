@@ -6,3 +6,4 @@ Practice website: https://www.automationexercise.com/
 
 
 #### [Test Case 1 - User Registration](https://github.com/peterhrncirik/QA-Automation/tree/main/tests/test_case_1)
+#### [Test Case 2 - Successful User Login](https://github.com/peterhrncirik/QA-Automation/tree/main/tests/test_case_2)

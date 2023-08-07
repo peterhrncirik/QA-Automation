@@ -8,6 +8,9 @@ from src.locators.locators import LoginPageLocators
 
 class LoginPage(BasePage):
 
+    def page_heading(self):
+        return self.wait_for(LoginPageLocators.LOGIN_PAGE_HEADING)
+
     def enter_email(self, email):
         self.wait_for(LoginPageLocators.EMAIL_INPUT).clear()
         self.wait_for(LoginPageLocators.EMAIL_INPUT).send_keys(email)
@@ -22,3 +25,15 @@ class LoginPage(BasePage):
     def check_error_message(self):
         error_message = self.wait_for(LoginPageLocators.ERROR_MESSAGE_LOCATOR)
         assert error_message.text == LoginPageLocators.ERROR_MESSAGE
+
+    def check_user_logged_in(self):
+        return self.wait_for(LoginPageLocators.LOGGED_IN_AS)
+
+    def delete_account(self):
+        self.wait_for(LoginPageLocators.DELETE_ACCOUNT_BUTTON).click()
+
+    def account_deleted_heading(self):
+        return self.wait_for(LoginPageLocators.ACCOUNT_DELETED_HEADING)
+
+    def click_on_continue_button(self):
+        self.find_element(LoginPageLocators.CONTINUE_BUTTON).click()

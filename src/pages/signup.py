@@ -141,8 +141,8 @@ class AccountCreated(BasePage):
     def check_user_logged_in(self):
         return self.wait_for(AccountCreatedPageLocators.LOGGED_IN_AS)
 
-    def logout_button(self):
-        self.wait_for(AccountCreatedPageLocators.LOGOUT_BUTTON)
+    def logout(self):
+        self.wait_for(AccountCreatedPageLocators.LOGOUT_BUTTON).click()
 
     def delete_account(self):
         self.wait_for(AccountCreatedPageLocators.DELETE_ACCOUNT_BUTTON).click()

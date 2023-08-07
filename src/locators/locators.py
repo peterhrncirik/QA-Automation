@@ -15,8 +15,10 @@ class RedirectLocators:
 
 class LoginPageLocators:
 
-    LOGIN_PAGE_LINK = (By.LINK_TEXT, 'Signup / Login')
-    LOGIN_PAGE_URL = '/login'
+    # First h2, can therefore use By.TAG_NAME
+    LOGIN_PAGE_HEADING = (By.TAG_NAME, 'h2')
+
+    LOGGED_IN_AS = (By.PARTIAL_LINK_TEXT, 'Logged in as')
 
     EMAIL_INPUT = (By.XPATH, '//input[@data-qa="login-email"]')
     PASSWORD_INPUT = (By.XPATH, '//input[@data-qa="login-password"]')
@@ -25,6 +27,10 @@ class LoginPageLocators:
 
     ERROR_MESSAGE_LOCATOR = (By.XPATH, '//p[@style="color: red;"]')
     ERROR_MESSAGE = 'Your email or password is incorrect!'
+
+    DELETE_ACCOUNT_BUTTON = (By.LINK_TEXT, 'Delete Account')
+    ACCOUNT_DELETED_HEADING = (By.TAG_NAME, 'h2')
+    CONTINUE_BUTTON = (By.XPATH, '//a[@data-qa="continue-button"]')
 
 class PreSignUpPageLocators:
 
