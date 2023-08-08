@@ -45,6 +45,7 @@ class PreSignUpPageLocators:
     EMAIL_INPUT = (By.XPATH, '//input[@data-qa="signup-email"]')
     USERNAME_INPUT = (By.XPATH, '//input[@data-qa="signup-name"]')
 
+    ERROR_MESSAGE = (By.XPATH, '//p[@style="color: red;"]')
     SIGNUP_BUTTON = (By.XPATH, '//button[@data-qa="signup-button"]')
 
 class MainSignUpPageLocators:

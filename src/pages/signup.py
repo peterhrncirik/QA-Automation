@@ -26,6 +26,9 @@ class SignUp_FirstStep(BasePage):
     def check_successful_redirect(self):
         assert PreSignUpPageLocators.SIGNUP_URL in self.driver.current_url
 
+    def error_message(self):
+        return self.find_element(PreSignUpPageLocators.ERROR_MESSAGE)
+
 class MainSignUp(BasePage):
 
     """
