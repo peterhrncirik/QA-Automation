@@ -22,9 +22,8 @@ class LoginPage(BasePage):
     def submit(self):
         self.find_element(LoginPageLocators.SUBMIT_BUTTON).click()
 
-    def check_error_message(self):
-        error_message = self.wait_for(LoginPageLocators.ERROR_MESSAGE_LOCATOR)
-        assert error_message.text == LoginPageLocators.ERROR_MESSAGE
+    def incorrect_login_error_message(self):
+        return self.wait_for(LoginPageLocators.ERROR_MESSAGE_LOCATOR)
 
     def check_user_logged_in(self):
         return self.wait_for(LoginPageLocators.LOGGED_IN_AS)
