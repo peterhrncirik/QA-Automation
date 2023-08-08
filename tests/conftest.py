@@ -53,3 +53,15 @@ def fake_user():
 def fake_user_for_deletion():
 
     pass
+
+@pytest.fixture()
+def working_login():
+
+    user = {
+        'username': 'patricia47', 
+        'email': 'cheryl57@example.com', 
+        'password': 'm&+Z8sLo2y'
+    }
+
+    yield user
+    

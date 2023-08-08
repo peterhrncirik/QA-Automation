@@ -36,3 +36,6 @@ class LoginPage(BasePage):
 
     def click_on_continue_button(self):
         self.find_element(LoginPageLocators.CONTINUE_BUTTON).click()
+
+    def logout(self):
+        self.wait_for(LoginPageLocators.LOGOUT_BUTTON).click()

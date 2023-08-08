@@ -24,6 +24,7 @@ class LoginPageLocators:
     PASSWORD_INPUT = (By.XPATH, '//input[@data-qa="login-password"]')
     
     SUBMIT_BUTTON = (By.XPATH, '//button[@data-qa="login-button"]')
+    LOGOUT_BUTTON = (By.LINK_TEXT, 'Logout')
 
     ERROR_MESSAGE_LOCATOR = (By.XPATH, '//p[@style="color: red;"]')
     ERROR_MESSAGE = 'Your email or password is incorrect!'
