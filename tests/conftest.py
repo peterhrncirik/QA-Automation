@@ -13,8 +13,7 @@ def driver():
     driver.implicitly_wait(1)
     driver.get('https://www.automationexercise.com/')
 
-    title = driver.title
-    assert title == 'Automation Exercise'
+    assert driver.title == 'Automation Exercise'
 
     yield driver
     

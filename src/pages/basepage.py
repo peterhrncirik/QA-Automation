@@ -2,6 +2,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.alert import Alert
 
 from src.locators.locators import RedirectLocators
 from src import settings
@@ -20,6 +21,9 @@ class BasePage:
     def wait_for(self, locator):
         return self._wait.until(EC.presence_of_element_located(locator))
 
+    def wait_for_elements(self, locator):
+        return self._wait.until(EC.presence_of_all_elements_located(locator))
+    
     def find_element(self, locator):
 
         # return self.driver.find_element(*locator)
@@ -38,8 +42,9 @@ class BasePage:
 
         return self._action.context_click(element)
 
-    def alert(self):
-        return self._wait.until(EC.alert_is_present())
+    def accept_alert(self):
+        alert = self._wait.until(EC.alert_is_present())
+        alert.accept()
     
     def get_page_title(self):
         return self.driver.title

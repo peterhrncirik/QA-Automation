@@ -89,3 +89,14 @@ class AccountCreatedPageLocators:
     LOGOUT_BUTTON = (By.LINK_TEXT, 'Logout')
     DELETE_ACCOUNT_BUTTON = (By.LINK_TEXT, 'Delete Account')
     ACCOUNT_DELETED_HEADING = (By.TAG_NAME, 'h2')
+
+class ContactUsPageLocators:
+
+    PAGE_HEADINGS = (By.TAG_NAME, 'h2')
+    NAME_FIELD = (By.XPATH, '//input[@data-qa="name"]')
+    EMAIL_FIELD = (By.XPATH, '//input[@data-qa="email"]')
+    SUBJECT_FIELD = (By.XPATH, '//input[@data-qa="subject"]')
+    MESSAGE_FIELD = (By.XPATH, '//textarea[@data-qa="message"]')
+    SUBMIT_BUTTON = (By.XPATH, '//input[@data-qa="submit-button"]')
+    SUCCESS_MESSAGE = (By.CLASS_NAME, 'status')
+    HOME_BUTTON = (By.CLASS_NAME, 'btn-success')
