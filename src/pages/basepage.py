@@ -70,6 +70,9 @@ class BasePage:
             case 'login':
                 address = RedirectLocators.LOGIN_SIGNUP
                 url = '/login'
+            case 'test_cases':
+                address = RedirectLocators.TEST_CASES
+                url = '/test_cases'
             case 'contact_us':
                 address = RedirectLocators.CONTACT_US
                 url = '/contact_us'
