@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 class RedirectLocators:
 
     HOME = (By.LINK_TEXT, 'Home')
-    PRODUCTS = (By.LINK_TEXT, 'Products')
+    PRODUCTS = (By.PARTIAL_LINK_TEXT, 'Products')
     CART = (By.LINK_TEXT, 'Cart')
     LOGIN_SIGNUP = (By.LINK_TEXT, 'Signup / Login')
     TEST_CASES = (By.LINK_TEXT, 'Test Cases')
@@ -100,3 +100,15 @@ class ContactUsPageLocators:
     SUBMIT_BUTTON = (By.XPATH, '//input[@data-qa="submit-button"]')
     SUCCESS_MESSAGE = (By.CLASS_NAME, 'status')
     HOME_BUTTON = (By.CLASS_NAME, 'btn-success')
+
+class ProductsPageLocators:
+
+    PAGE_HEADINGS = (By.CLASS_NAME, 'title')
+    PRODUCTS_LIST = (By.CLASS_NAME, 'single-products')
+    VIEW_PRODUCT_BUTTON = (By.LINK_TEXT, 'View Product')
+    
+class ProductPageLocators:
+
+    NAME = (By.CSS_SELECTOR, '.product-information > h2')
+    DETAILS = (By.CSS_SELECTOR, '.product-information > p')
+    PRICE = (By.CSS_SELECTOR, '.product-information > span > span')
