@@ -8,14 +8,24 @@ from src.locators.locators import ProductsPageLocators, ProductPageLocators
 class ProductsPage(BasePage):
 
     def page_heading(self):
-        return self.wait_for(ProductsPageLocators.PAGE_HEADINGS)
+        return self.wait_for(ProductsPageLocators.PAGE_HEADING)
 
     def get_products_list(self):
-        return self.wait_for_elements(ProductsPageLocators.PRODUCTS_LIST)
+
+        try:
+            return self.wait_for_elements(ProductsPageLocators.PRODUCTS_LIST)
+        except:
+            # Return None when doing Search and there is nothing found
+            return None
 
     def view_product(self, product=0):
         views_product_links = self.wait_for_elements(ProductsPageLocators.VIEW_PRODUCT_BUTTON)
         views_product_links[product].click()
+
+    def search_product(self, product):
+        self.wait_for(ProductsPageLocators.SEARCH_INPUT).clear()
+        self.wait_for(ProductsPageLocators.SEARCH_INPUT).send_keys(product)
+        self.wait_for(ProductsPageLocators.SEARCH_SUBMIT_BUTTON).click()
 
 class ProductPage(BasePage):
 
@@ -28,4 +38,5 @@ class ProductPage(BasePage):
 
     def product_price(self):
         return self.wait_for(ProductPageLocators.PRICE)
+    
 

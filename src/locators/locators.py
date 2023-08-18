@@ -103,9 +103,11 @@ class ContactUsPageLocators:
 
 class ProductsPageLocators:
 
-    PAGE_HEADINGS = (By.CLASS_NAME, 'title')
+    PAGE_HEADING = (By.CLASS_NAME, 'title')
     PRODUCTS_LIST = (By.CLASS_NAME, 'single-products')
     VIEW_PRODUCT_BUTTON = (By.LINK_TEXT, 'View Product')
+    SEARCH_INPUT = (By.ID, 'search_product')
+    SEARCH_SUBMIT_BUTTON = (By.ID, 'submit_search')
     
 class ProductPageLocators:
 
