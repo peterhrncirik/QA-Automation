@@ -13,5 +13,4 @@ geckodriver.log
 # Ignore extension
 ublock.xpi
 
-# Normally would ignore .gitignore, but for the project I will include it
 # .gitignore

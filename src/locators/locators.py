@@ -3,6 +3,18 @@ from selenium.webdriver.common.by import By
 """
     Classes containing locators for specific pages
 """
+class HomePageLocators:
+
+    SUBSCRIPTION_INPUT_FIELD = (By.ID, 'susbscribe_email')
+    SUBSCRIPTION_SUBMIT_BUTTON = (By.ID, 'subscribe')
+    SUBSCRIPTION_CONFIRMATION = (By.ID, 'success-subscribe')
+
+class CartPageLocators:
+
+    SUBSCRIPTION_INPUT_FIELD = (By.ID, 'susbscribe_email')
+    SUBSCRIPTION_SUBMIT_BUTTON = (By.ID, 'subscribe')
+    SUBSCRIPTION_CONFIRMATION = (By.ID, 'success-subscribe')
+
 class RedirectLocators:
 
     HOME = (By.LINK_TEXT, 'Home')
