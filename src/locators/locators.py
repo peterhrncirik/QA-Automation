@@ -11,6 +11,12 @@ class HomePageLocators:
 
 class CartPageLocators:
 
+    # Find products based on partial ID (product-1, product-2, ...)
+    PRODUCTS_LIST = (By.CSS_SELECTOR, 'tr[id*=product-]')
+    PRODUCT_PRICE = (By.CLASS_NAME, 'cart_price')
+    PRODUCT_QUANTITY = (By.CLASS_NAME, 'cart_quantity')
+    PRODUCT_TOTAL = (By.CLASS_NAME, 'cart_total')
+
     SUBSCRIPTION_INPUT_FIELD = (By.ID, 'susbscribe_email')
     SUBSCRIPTION_SUBMIT_BUTTON = (By.ID, 'subscribe')
     SUBSCRIPTION_CONFIRMATION = (By.ID, 'success-subscribe')
@@ -118,8 +124,12 @@ class ProductsPageLocators:
     PAGE_HEADING = (By.CLASS_NAME, 'title')
     PRODUCTS_LIST = (By.CLASS_NAME, 'single-products')
     VIEW_PRODUCT_BUTTON = (By.LINK_TEXT, 'View Product')
+    PRODUCT_PRICE = (By.TAG_NAME, 'h2')
     SEARCH_INPUT = (By.ID, 'search_product')
     SEARCH_SUBMIT_BUTTON = (By.ID, 'submit_search')
+    PRODUCTS_LIST_2 = (By.CLASS_NAME, f'productinfo')
+    ADD_TO_CART_BUTTON = (By.CLASS_NAME, f'add-to-cart')
+    CONTINUE_SHOPPING_BUTTON = (By.CSS_SELECTOR, 'button[data-dismiss="modal"]')
     
 class ProductPageLocators:
 

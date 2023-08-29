@@ -2,7 +2,7 @@ from src.pages.homepage import HomePage
 from src.pages.cartpage import CartPage
 
 """
-    Test Case 10: Verify Subscription on Home Page
+    Test Cases 10 & 11: Verify Subscription on Home Page & Cart Page
 """
 
 def test_subscription_home_page(driver, fake_user):
