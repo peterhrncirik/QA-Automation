@@ -8,7 +8,7 @@ from time import sleep
     Test Cases 12: Add Products in Cart
 """
 
-def test_adding_products_to_cart(driver, fake_user):
+def test_adding_products_to_cart(driver):
 
     products_page = ProductsPage(driver)
     products_page.redirect_to('products')

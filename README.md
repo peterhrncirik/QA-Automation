@@ -16,3 +16,4 @@ Practice website: https://www.automationexercise.com/
 #### [Test Case 9 - Search Product](https://github.com/peterhrncirik/QA-Automation/tree/main/tests/test_case_9)
 #### [Test Case 10, 11 - Verify Subscription](https://github.com/peterhrncirik/QA-Automation/tree/main/tests/test_case_10)
 #### [Test Case 12 - Add Products in Cart](https://github.com/peterhrncirik/QA-Automation/tree/main/tests/test_case_12)
+#### [Test Case 13 - Verify Product Quantity in Cart](https://github.com/peterhrncirik/QA-Automation/tree/main/tests/test_case_13)

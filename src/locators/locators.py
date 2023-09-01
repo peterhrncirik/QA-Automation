@@ -8,6 +8,7 @@ class HomePageLocators:
     SUBSCRIPTION_INPUT_FIELD = (By.ID, 'susbscribe_email')
     SUBSCRIPTION_SUBMIT_BUTTON = (By.ID, 'subscribe')
     SUBSCRIPTION_CONFIRMATION = (By.ID, 'success-subscribe')
+    VIEW_PRODUCT_BUTTON = (By.LINK_TEXT, 'View Product')
 
 class CartPageLocators:
 
@@ -136,3 +137,6 @@ class ProductPageLocators:
     NAME = (By.CSS_SELECTOR, '.product-information > h2')
     DETAILS = (By.CSS_SELECTOR, '.product-information > p')
     PRICE = (By.CSS_SELECTOR, '.product-information > span > span')
+    QUANTITY_INPUT = (By.ID, 'quantity')
+    ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, 'button.cart')
+    CONTINUE_SHOPPING_BUTTON = (By.CSS_SELECTOR, 'button[data-dismiss="modal"]')

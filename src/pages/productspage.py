@@ -68,4 +68,16 @@ class ProductPage(BasePage):
     def product_price(self):
         return self.wait_for(ProductPageLocators.PRICE)
     
+    def change_quantity(self, amount=1):
+        quantity_input = self.wait_for(ProductPageLocators.QUANTITY_INPUT)
+        quantity_input.clear()
+        quantity_input.send_keys(amount)
+
+    def add_to_cart(self):
+        add_to_cart = self.wait_for(ProductPageLocators.ADD_TO_CART_BUTTON)
+        add_to_cart.click()
+
+        # Close Added! Modal
+        sleep(.5)
+        self.wait_for(ProductPageLocators.CONTINUE_SHOPPING_BUTTON).click()
 
