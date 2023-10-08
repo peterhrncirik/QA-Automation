@@ -1,6 +1,8 @@
 from .basepage import BasePage
 from ..locators.locators import CartPageLocators
 
+from time import sleep
+
 class CartPage(BasePage):
     
     def enter_subscription_email(self, email):
@@ -29,3 +31,11 @@ class CartPage(BasePage):
 
         return products_list
 
+    def proceed_to_checkout(self, with_modal=False):
+        self.wait_for(CartPageLocators.PROCEED_TO_CHECKOUT_BUTTON).click()
+
+
+        # Close Checkout Modal
+        if with_modal:
+            sleep(.5)
+            self.wait_for(CartPageLocators.CONTINUE_ON_CART_BUTTON).click()

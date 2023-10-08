@@ -79,6 +79,9 @@ class BasePage:
             case 'contact_us':
                 address = RedirectLocators.CONTACT_US
                 url = '/contact_us'
+            case 'delete_account':
+                address = RedirectLocators.DELETE_ACCOUNT
+                url = '/delete_account'
 
         self.wait_for(address).click()
         assert url in self.driver.current_url

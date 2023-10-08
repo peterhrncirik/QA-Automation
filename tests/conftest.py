@@ -4,6 +4,8 @@ from faker import Faker
 import random
 import pytest
 
+from src.pages.signup import SignUp_FirstStep, MainSignUp, AccountCreated
+
 @pytest.fixture()
 def driver():
     options = Options()
@@ -43,6 +45,9 @@ def fake_user():
         'city': fake.city(),
         'zipcode': fake.zipcode(),
         'mobile_number': fake.phone_number(),
+        'credit_card_number': fake.credit_card_number(),
+        'card_cvc': fake.credit_card_security_code(),
+        'card_expiry': fake.credit_card_expire(),
     }
 
 
@@ -63,4 +68,5 @@ def working_login():
     }
 
     yield user
-    
+
+

@@ -9,6 +9,8 @@ class HomePageLocators:
     SUBSCRIPTION_SUBMIT_BUTTON = (By.ID, 'subscribe')
     SUBSCRIPTION_CONFIRMATION = (By.ID, 'success-subscribe')
     VIEW_PRODUCT_BUTTON = (By.LINK_TEXT, 'View Product')
+    ADD_TO_CART_BUTTON = (By.CLASS_NAME, f'add-to-cart')
+    CONTINUE_SHOPPING_BUTTON = (By.CSS_SELECTOR, 'button[data-dismiss="modal"]')
 
 class CartPageLocators:
 
@@ -17,6 +19,8 @@ class CartPageLocators:
     PRODUCT_PRICE = (By.CLASS_NAME, 'cart_price')
     PRODUCT_QUANTITY = (By.CLASS_NAME, 'cart_quantity')
     PRODUCT_TOTAL = (By.CLASS_NAME, 'cart_total')
+    PROCEED_TO_CHECKOUT_BUTTON = (By.CLASS_NAME, 'check_out')
+    CONTINUE_ON_CART_BUTTON = (By.CLASS_NAME, 'close-checkout-modal')
 
     SUBSCRIPTION_INPUT_FIELD = (By.ID, 'susbscribe_email')
     SUBSCRIPTION_SUBMIT_BUTTON = (By.ID, 'subscribe')
@@ -31,6 +35,7 @@ class RedirectLocators:
     TEST_CASES = (By.LINK_TEXT, 'Test Cases')
     API_TESTING = (By.LINK_TEXT, 'API Testing')
     CONTACT_US = (By.LINK_TEXT, 'Contact us')
+    DELETE_ACCOUNT = (By.LINK_TEXT, 'Delete Account')
 
 class LoginPageLocators:
 
@@ -140,3 +145,19 @@ class ProductPageLocators:
     QUANTITY_INPUT = (By.ID, 'quantity')
     ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, 'button.cart')
     CONTINUE_SHOPPING_BUTTON = (By.CSS_SELECTOR, 'button[data-dismiss="modal"]')
+
+class CheckOutPageLocators:
+    
+    ADDRESS = (By.CSS_SELECTOR, 'ul#address_delivery > li')
+    COMMENT_AREA = (By.NAME, 'message')
+    PLACE_ORDER_BUTTON = (By.LINK_TEXT, 'Place Order')
+
+class PaymentPageLocators:
+
+    NAME_ON_CARD = (By.NAME, 'name_on_card')
+    CARD_NUMBER = (By.NAME, 'card_number')
+    CVC = (By.NAME, 'cvc')
+    MONTH = (By.NAME, 'expiry_month')
+    YEAR = (By.NAME, 'expiry_year')
+    PAY_BUTTON = (By.ID, 'submit')
+    CONFIRMATION_MESSAGE = (By.TAG_NAME, 'p')
