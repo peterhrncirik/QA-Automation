@@ -18,3 +18,4 @@ Practice website: https://www.automationexercise.com/
 #### [Test Case 12 - Add Products in Cart](https://github.com/peterhrncirik/QA-Automation/tree/main/tests/test_case_12)
 #### [Test Case 13 - Verify Product Quantity in Cart](https://github.com/peterhrncirik/QA-Automation/tree/main/tests/test_case_13)
 #### [Test Case 14 - Place Order - Register During Checkout](https://github.com/peterhrncirik/QA-Automation/tree/main/tests/test_case_14)
+#### [Test Case 15 - Place Order - Register Before Checkout](https://github.com/peterhrncirik/QA-Automation/tree/main/tests/test_case_15)
